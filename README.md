@@ -1,1 +1,1 @@
-# note_app
+# Hometask #1 | JavaScript from RADENCY
