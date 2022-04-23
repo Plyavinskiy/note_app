@@ -1,0 +1,192 @@
+:root {
+  --white: #FFF;
+  --basic-gray: #616161;
+  --table-header-background: #5F9EA0;
+  --note-row-background: #B4EBE7;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* ***** TABLE ***** */
+table {
+  border-spacing: 0 0.5em;
+  width: 100%;
+  table-layout: fixed;
+}
+
+tr th {
+  color: var(--white);
+  background-color: var(--table-header-background);
+}
+
+tr td {
+  background-color: var(--note-row-background);
+}
+
+td:first-child {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+tr td:first-child,
+tr th:first-child {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+
+.category-icon,
+.row-icon {
+  fill: var(--basic-gray);
+}
+
+.header-icon {
+  fill: var(--white);
+}
+
+td,
+th {
+  padding: 0.5em;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 2em;
+}
+
+.header-icon {
+  text-align: center;
+}
+
+.header-icon.archive svg:hover {
+  opacity: .5;
+  transition: .5s;
+}
+
+.category-icon,
+.active-icon {
+  width: 4em;
+}
+
+td:first-child svg {
+  padding: 7px;
+  border-radius: 50%;
+  background-color: var(--basic-gray);
+  color: var(--white);
+}
+
+td.row-icon:nth-last-child(-n+3) {
+  text-align: center;
+}
+
+td.row-icon:nth-last-child(-n+3) svg:hover {
+  opacity: .5;
+  transition: .5s;
+}
+
+svg {
+  max-height: 1.5em;
+  max-width: 1.5em;
+}
+
+@media screen and (max-width: 800px) {
+  .created,
+  .dates {
+    width: 0;
+  }
+}
+
+/* ***** FORM ***** */
+.create-note {
+  margin: 2em 0;
+  display: flex;
+  justify-content: end;
+}
+
+.create-note button {
+  background-color: var(--note-row-background);
+  border: 1px solid var(--table-header-background);
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+.create-note button:hover {
+  background-color: var(--table-header-background);
+  transition: 0.4s;
+}
+
+.wrapper-div {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+form * {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+form {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+form > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+textarea {
+  min-width: 100%;
+  min-height: 4em;
+  max-height: 12em;
+}
+
+.cancel:hover,
+.submit-btn:hover {
+  background-color: var(--basic-gray);
+  transition: 1s;
+}
